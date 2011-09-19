@@ -1,67 +1,57 @@
 /*
-    Theme Name: Sample
-    Theme URI: http://www.yourdomain.com/
-    Description: This is a sample child theme created for the Genesis Framework.
-    Author: Your Business Name
-    Author URI: http://www.yourbusiness.com/
- 
-    Version: 1.0
- 
-    Tags: custom-background, custom-header, featured-images, threaded-comments, two-columns
- 
-    Template: genesis
-    Template Version: 1.7
- 
-    License: GNU General Public License v2.0
-    License URI: http://www.opensource.org/licenses/gpl-license.php
+ * Theme Name: Regional Autos
+ * Author: DealerTrend, Inc
+ * Author URI: http://www.dealertrend.com/
+ * Version: 1.0
+ * Template: genesis
+ * Template Version: 1.7
 */
 
-/* Table of Contents
-
-* Defaults
-* Hyperlinks
-* Body
-* Wrap
-* Header
-* Image Header - Partial Width
-* Image Header - Full Width
-* Navigation Constants
-* Header Right Navigation
-* Primary Navigation
-* Primary Navigation Extras
-* Secondary Navigation
-* Inner
-* Breadcrumb
-* Taxonomy Description
-* Content-Sidebar Wrap
-* Content
-* Column Classes
-* Featured Post Grid
-* Headlines
-* Ordered / Unordered Lists
-* Post Info
-* Post Meta
-* Author Box
-* Sticky Posts
-* Archive Page
-* Post Icons
-* Images
-* Post Navigation
-* Primary / Secondary Sidebars
-* Tag Cloud
-* Dropdowns
-* Featured Page / Post
-* User Profile
-* Buttons
-* Search Form
-* eNews & Updates Widget
-* Calendar Widget
-* Footer Widgets
-* Footer
-* Comments
-* Gravity Forms
-
-*/
+/*
+ * Table of Contents
+  * Defaults
+  * Hyperlinks
+  * Body
+  * Wrap
+  * Header
+  * Image Header - Partial Width
+  * Image Header - Full Width
+  * Navigation Constants
+  * Header Right Navigation
+  * Primary Navigation
+  * Primary Navigation Extras
+  * Secondary Navigation
+  * Inner
+  * Breadcrumb
+  * Taxonomy Description
+  * Content-Sidebar Wrap
+  * Content
+  * Column Classes
+  * Featured Post Grid
+  * Headlines
+  * Ordered / Unordered Lists
+  * Post Info
+  * Post Meta
+  * Author Box
+  * Sticky Posts
+  * Archive Page
+  * Post Icons
+  * Images
+  * Post Navigation
+  * Primary / Secondary Sidebars
+  * Tag Cloud
+  * Dropdowns
+  * Featured Page / Post
+  * User Profile
+  * Buttons
+  * Search Form
+  * eNews & Updates Widget
+  * Calendar Widget
+  * Footer Widgets
+  * Footer
+  * Comments
+  * Gravity Forms
+ */
 
 /* Defaults
 ------------------------------------------------------------ */
