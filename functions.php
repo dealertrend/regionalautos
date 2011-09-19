@@ -45,6 +45,15 @@ class Theme {
 	}
 
 	function register_defaults() {
+		register_default_headers(
+			array(
+				'defaultlogo' => array(
+					'url' => $this->theme_information[ 'ThemeURL' ] . '/images/regional-autos-logo-183x91.png',
+					'thumbnail_url' => $this->theme_information[ 'ThemeURL' ] . '/images/regional-autos-logo-183x91.png',
+					'description' => __( 'Default Logo', 'regionalautos' )
+				)
+			)
+		);
 	}
 
 	function start_genesis_framework() {
@@ -78,6 +87,7 @@ class Theme {
 	function create_filters() {
 		add_filter( 'genesis_before_header' , array( &$this , 'add_left_shadow' ) );
 		add_filter( 'genesis_after_footer' , array( &$this , 'add_right_shadow' ) );
+		add_filter( 'genesis_header' , array( &$this , 'add_header_widget_area' ) );
 		add_filter( 'genesis_footer_creds_text' , array( &$this , 'add_credits' ) );
 		add_filter( 'genesis_footer_output' , array( &$this , 'add_footer_menu' ) );
 	}
@@ -90,8 +100,51 @@ class Theme {
 		echo '<div id="regionalautos-right-shadow"></div>';
 	}
 
+	function add_header_widget_area() {
+		if( ! dynamic_sidebar( 'Header Left' ) ):
+		endif;
+		if( ! dynamic_sidebar( 'Header Right' ) ):
+		endif;
+	}
+
 	function specify_theme_features() {
 		add_filter( 'widget_text' , 'do_shortcode' );
+		$before_widget = '<div id="%1$s" class="widget %2$s regionalautos-theme widget-area">';
+		$after_widget = '</div>';
+		$before_title = '<h4 class="widget-title">';
+		$after_title = '</h4>';
+		add_custom_background();
+		add_theme_support(
+			'genesis-custom-header',
+			array(
+				'width' => 960,
+				'height' => 100,
+				'header_image' => $this->theme_information[ 'ThemeURL' ] . '/images/regional-autos-logo-183x91.png'
+			)
+		);
+		unregister_sidebar( 'header-right' );
+		genesis_register_sidebar(
+			array(
+				'id' => 'regionalautos-header-left',
+				'name' => 'Header Left',
+				'description' => 'This is the left side of the header',
+				'before_widget' => '<div id="%1$s" class="widget %2$s regionalautos-theme widget-area float-left">',
+				'after_widget' => $after_widget,
+				'before_title' => $before_title,
+				'after_title' => $after_title
+			)
+		);
+		genesis_register_sidebar(
+			array(
+				'regionalautos-header-right',
+				'name' => 'Header Right',
+				'description' => 'This is the right side of the header',
+				'before_widget' => '<div id="%1$s" class="widget %2$s regionalautos-theme widget-area float-right">',
+				'after_widget' => $after_widget,
+				'before_title' => $before_title,
+				'after_title' => $after_title
+			)
+		);
 	}
 
 	function add_credits( $credits ) {

@@ -179,10 +179,16 @@ body {
 }
 
 #header .widget-area {
-	float: right;
-	width: 550px;
+	width: 480px;
 }
 
+#header .widget-area.float-left {
+  float:left;
+}
+
+#header .widget-area.float-right {
+  float:right;
+}
 
 /* Image Header - Partial Width
 ------------------------------------------------------------ */
@@ -212,6 +218,7 @@ body {
 .header-full-width #title,
 .header-full-width #title a {
 	width: 960px;
+  position: absolute;
 }
 
 
