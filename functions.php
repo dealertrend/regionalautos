@@ -48,8 +48,8 @@ class Theme {
 		register_default_headers(
 			array(
 				'defaultlogo' => array(
-					'url' => $this->theme_information[ 'ThemeURL' ] . '/images/regional-autos-logo-183x91.png',
-					'thumbnail_url' => $this->theme_information[ 'ThemeURL' ] . '/images/regional-autos-logo-183x91.png',
+					'url' => $this->theme_information[ 'ThemeURL' ] . '/images/regional-autos-logo-200x120.png',
+					'thumbnail_url' => $this->theme_information[ 'ThemeURL' ] . '/images/regional-autos-logo-200x120.png',
 					'description' => __( 'Default Logo', 'regionalautos' )
 				)
 			)
@@ -119,7 +119,7 @@ class Theme {
 			array(
 				'width' => 960,
 				'height' => 100,
-				'header_image' => $this->theme_information[ 'ThemeURL' ] . '/images/regional-autos-logo-183x91.png'
+				'header_image' => $this->theme_information[ 'ThemeURL' ] . '/images/regional-autos-logo-200x120.png'
 			)
 		);
 		unregister_sidebar( 'header-right' );
