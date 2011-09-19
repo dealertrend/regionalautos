@@ -51,6 +51,7 @@
   * Footer
   * Comments
   * Gravity Forms
+  * Customizations
  */
 
 /* Defaults
@@ -1493,4 +1494,27 @@ div.gform_wrapper .gform_footer {
 	border: none;
 	margin: 0;
 	padding: 0;
+}
+
+/* Customizations
+------------------------------------------------------------ */
+
+#regionalautos-left-shadow,
+#regionalautos-right-shadow {
+  width:20px;
+  height:570px;
+  background-position:top center;
+  background-repeat:no-repeat;
+	position:absolute;
+  top:0;
+}
+
+#regionalautos-left-shadow {
+  background-image: url( 'images/leftside-stage-shadow-20x578.png' );
+  margin-left:-20px;
+}
+
+#regionalautos-right-shadow {
+  background-image: url( 'images/rightside-stage-shadow-20x578.png' );
+  margin-left:960px;
 }

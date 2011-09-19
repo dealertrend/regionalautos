@@ -13,7 +13,7 @@ class Theme {
 		$i_can_haz_engine = $this->start_genesis_framework();
 		if( $i_can_haz_engine === true ) {
 			$this->specify_theme_features();
-			$this->build_footer();
+			$this->create_filters();
 		}
 	}
 
@@ -75,13 +75,23 @@ class Theme {
 		switch_theme( WP_DEFAULT_THEME , WP_DEFAULT_THEME );
 	}
 
-	function specify_theme_features() {
-		add_filter( 'widget_text' , 'do_shortcode' );
-	}
-
-	function build_footer() {
+	function create_filters() {
+		add_filter( 'genesis_before_header' , array( &$this , 'add_left_shadow' ) );
+		add_filter( 'genesis_after_footer' , array( &$this , 'add_right_shadow' ) );
 		add_filter( 'genesis_footer_creds_text' , array( &$this , 'add_credits' ) );
 		add_filter( 'genesis_footer_output' , array( &$this , 'add_footer_menu' ) );
+	}
+
+	function add_left_shadow() {
+		echo '<div id="regionalautos-left-shadow"></div>';
+	}
+
+	function add_right_shadow() {
+		echo '<div id="regionalautos-right-shadow"></div>';
+	}
+
+	function specify_theme_features() {
+		add_filter( 'widget_text' , 'do_shortcode' );
 	}
 
 	function add_credits( $credits ) {
