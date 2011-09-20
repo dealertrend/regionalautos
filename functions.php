@@ -88,8 +88,7 @@ class Theme {
 		add_filter( 'genesis_before_header' , array( &$this , 'add_left_shadow' ) );
 		add_filter( 'genesis_after_footer' , array( &$this , 'add_right_shadow' ) );
 		add_filter( 'genesis_header' , array( &$this , 'add_header_widget_area' ) );
-		add_filter( 'genesis_footer_creds_text' , array( &$this , 'add_credits' ) );
-		add_filter( 'genesis_footer_output' , array( &$this , 'add_footer_menu' ) );
+		add_filter( 'genesis_footer_output' , array( &$this , 'add_footer' ) );
 	}
 
 	function add_left_shadow() {
@@ -114,6 +113,10 @@ class Theme {
 		$before_title = '<h4 class="widget-title">';
 		$after_title = '</h4>';
 		add_custom_background();
+		register_nav_menu(
+			'footer-menu',
+			'Footer Menu'
+		);
 		add_theme_support(
 			'genesis-custom-header',
 			array(
@@ -145,17 +148,102 @@ class Theme {
 				'after_title' => $after_title
 			)
 		);
+		genesis_register_sidebar(
+			array(
+				'name' => 'Top Full Width Content Area',
+				'description' => 'This is a full width content area for the home page.',
+				'before_widget' => $before_widget,
+				'after_widget' => $after_widget,
+				'before_title' => $before_title,
+				'after_title' => $after_title
+			)
+		);
+		genesis_register_sidebar(
+			array(
+				'name' => 'Home Top Left',
+				'description' => 'This is the top left section of the homepage.',
+				'before_widget' => $before_widget,
+				'after_widget' => $after_widget,
+				'before_title' => $before_title,
+				'after_title' => $after_title
+			)
+		);
+		genesis_register_sidebar(
+			array(
+				'name' => 'Home Top Middle',
+				'description' => 'This is the top middle section of the homepage.',
+				'before_widget' => $before_widget,
+				'after_widget' => $after_widget,
+				'before_title' => $before_title,
+				'after_title' => $after_title
+			)
+		);
+		genesis_register_sidebar(
+			array(
+				'name'=>'Home Top Right',
+				'description' => 'This is the top right section of the homepage.',
+				'before_widget' => $before_widget,
+				'after_widget' => $after_widget,
+				'before_title' => $before_title,
+				'after_title' => $after_title
+			)
+		);
+		genesis_register_sidebar(
+			array(
+				'name'=>'Middle Full Width Content Area',
+				'description' => 'This is a full width content area for the home page.',
+				'before_widget' => $before_widget,
+				'after_widget' => $after_widget,
+				'before_title' => $before_title,
+				'after_title' => $after_title
+			)
+		);
+		genesis_register_sidebar(
+			array(
+				'name' => 'Home Bottom Left',
+				'description' => 'This is the bottom left section of the homepage.',
+				'before_widget' => $before_widget,
+				'after_widget' => $after_widget,
+				'before_title' => $before_title,
+				'after_title' => $after_title
+			)
+		);
+		genesis_register_sidebar(
+			array(
+				'name' => 'Home Bottom Middle',
+				'description' => 'This is the bottom middle section of the homepage.',
+				'before_widget' => $before_widget,
+				'after_widget' => $after_widget,
+				'before_title' => $before_title,
+				'after_title' => $after_title
+			)
+		);
+		genesis_register_sidebar(
+			array(
+				'name'=>'Home Bottom Right',
+				'description' => 'This is the bottom right section of the homepage.',
+				'before_widget' => $before_widget,
+				'after_widget' => $after_widget,
+				'before_title' => $before_title,
+				'after_title' => $after_title
+			)
+		);
+		genesis_register_sidebar(
+			array(
+				'name'=>'Bottom Full Width Content Area',
+				'description' => 'This is a full width content area for the home page.',
+				'before_widget' => $before_widget,
+				'after_widget' => $after_widget,
+				'before_title' => $before_title,
+				'after_title' => $after_title
+			)
+		);
 	}
-
-	function add_credits( $credits ) {
-		$credits = '[footer_copyright] &bull; Regional Autos Theme by <a href="http://www.dealertrend.com" title="DealerTrend, Inc." target="_blank">DealerTrend, Inc.</a> &bull; Built on the [footer_genesis_link]';
-
-		return $credits;
-	}
-
-	function add_footer_menu( $instance ) {
-		$menu = wp_nav_menu( array( 'menu' => 'Footer Menu' , 'theme_location' => 'footer-menu' ) );
-
+	function add_footer( $instance ) {
+		$instance = '<div id="regionalautos-footer" class="footer">';
+		$instance .= wp_nav_menu( array( 'menu' => 'Footer Menu' , 'theme_location' => 'footer-menu' ) );
+		$instance .= '<div id="dealertrend-logo"><a href="http://www.dealertrend.com" title="DealerTrend, Inc." alt="DealerTrend, Inc."><img src="' . $this->theme_information[ 'ThemeURL' ] . '/images/dealertrend-footer-logo-137x32.jpg" width="137" height="32" /></a></div>';
+		$instance .= '</div>';
 		return $instance . $menu;
 	}
 

@@ -178,10 +178,6 @@ body {
 	font-size: 14px;
 }
 
-#header .widget-area {
-	width: 480px;
-}
-
 #header .widget-area.float-left {
   float:left;
 }
@@ -565,7 +561,7 @@ li li a .sf-sub-indicator {
 ------------------------------------------------------------ */
 
 #inner {
-	margin: 20px auto;
+	margin: 0px auto;
 	overflow: hidden;
 	width: 960px;
 }
@@ -1349,7 +1345,6 @@ div.gform_footer input.button:hover,
 ------------------------------------------------------------ */
 
 #footer {
-	background-color: #333;
 	clear: both;
 	font-size: 12px;
 	margin: 0 auto;
@@ -1357,6 +1352,8 @@ div.gform_footer input.button:hover,
 	padding: 6px 0 5px;
 	text-transform: uppercase;
 	width: 960px;
+  border-top:1px solid black;
+  border-bottom:1px solid black;
 }
 
 #footer p {
@@ -1525,3 +1522,36 @@ div.gform_wrapper .gform_footer {
   background-image: url( 'images/rightside-stage-shadow-20x578.png' );
   margin-left:957px;
 }
+
+.home-top-full-width,
+.home-middle-full-width,
+.home-bottom-full-width {
+  width:960px;
+  clear:both;
+}
+
+.home-top-left,
+.home-top-middle,
+.home-top-right,
+.home-bottom-left,
+.home-bottom-middle,
+.home-bottom-right {
+  float:left;
+}
+
+.home-top-left,
+.home-bottom-left {
+  padding-left:30px;
+}
+
+.footer > div > div > ul.menu { width:700px; display:block; margin:0 50px; overflow:auto; float:left; line-height:30px; }
+.footer > div > div > ul ul { display:none; }
+.footer > div > div > ul.menu li { display:block; float:left; width:auto; margin:0; padding:0; }
+.footer > div > div > ul.menu li a { display:block; margin-right:10px; color:#666 !important; }
+
+#dealertrend-logo {
+  float:left;
+  line-height:30px;
+}
+
+.vvqbox { margin:0 auto !important; }
