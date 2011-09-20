@@ -150,7 +150,7 @@ body {
 
 #header {
 	margin: 0 auto;
-	min-height: 80px;
+	min-height: 100px;
 	overflow: hidden;
 	width: 960px;
 }
@@ -362,6 +362,7 @@ li li a .sf-sub-indicator {
 
 #nav {
 	background-color: #333;
+  background-image: url('images/background-main-navigation-container-950x27.jpg');
 	border-bottom: 1px solid #666;
 	clear: both;
 	color: #fff;
@@ -395,8 +396,7 @@ li li a .sf-sub-indicator {
 #nav .current_page_item a,
 #nav .current-cat a,
 #nav .current-menu-item a {
-	background-color: #000;
-	color: #fff;
+	color: #e1e1e1;
 }
 
 #nav li li a,
